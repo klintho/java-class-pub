@@ -2,13 +2,16 @@ package exercise3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 /**
  *
- * @author yasiro01
+ * @author Thomas Klinkhammer
  */
 public class Ex2Driver {
   public static final String PATH = "data/";
@@ -63,7 +66,16 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException 
    */
   public static void writeMatrix(int[][] matrix, String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+    BufferedReader inputFile = new BufferedReader(new FileReader(filename));
+    for (int i = 0; i<matrix.length; i++) {
+        for (int j =0; j<matrix[i].length; j++) {
+            if (j==matrix[i].length-1) {
+                outputFile.write(matrix[i][j]);
+            } else {
+                outputFile.write(matrix[i][j]+",");
+            }
+        }
+    }
   }
   /**
    * Read a matrix from a file
@@ -72,7 +84,20 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException
    */
   public static int[][] readFile(String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+    Scanner in = new Scanner(filename);
+    int r = ;
+    int c = ;
+    int[][] arr = new int[r][c];
+    for(int i = 0; i < r; ++i)
+{
+    for(int j = 0; j < c; ++j)
+    {
+        if(Scanner.hasNextInt())
+        {
+            arr[i][j] = Scanner.nextInt();
+        }
+    }
+}
     /*
     10. Open the input file and create a Scanner object to read its content
     20. Read two values (rows and columns) from the first line, if possible
@@ -89,6 +114,14 @@ public class Ex2Driver {
    * @return the resulting matrix
    */
   public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
-    throw new UnsupportedOperationException();
+     int[][] product = new int[matrix1.length][matrix2.length];
+        for(int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix2.length; j++) {
+                for (int k = 0; k < matrix2[j].length; k++) {
+                    product[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+        return product;
   }
 }
