@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author yasiro01
+ * @author Thomas Klinkhammer
  */
 public class Ex2Driver {
   public static final String PATH = "data/";
