@@ -141,11 +141,20 @@ public class Ex1Driver {
    * @param numbers
    * @return 
    */
+<<<<<<< HEAD
   public static int task8(int[] numbers) {
    System.out.println("---Task 8---");
       int total = 0;
       for (int i=0; i < numbers.length; i++){
       total += numbers[i];
+=======
+  public static int task8() {
+   System.out.println("---Task 8---");
+   int[] numbers = new int[10];
+   int total = 0;
+   for (int i=0; i < numbers.length; i++){
+      total += i;
+>>>>>>> 13bdf99842e911e55a5deef94ddb8e2a6ad7c879
    }
    System.out.printf("The sum of the array is %d", total);
    return total;
@@ -161,6 +170,7 @@ public class Ex1Driver {
     Scanner keyboard = new Scanner(System.in);
     System.out.println("Enter a word");
     word = keyboard.nextLine();
+<<<<<<< HEAD
     boolean found = false;
     for (int i = 0; i < word.length()-1; i++) {
         if(word.charAt(i) >= word.charAt(i+1)) {
@@ -170,6 +180,13 @@ public class Ex1Driver {
         }
     }
     return found;
+=======
+    for (int i = 0; i < word.length()-1; i++) {
+        if(word.charAt(i) >= word.charAt(i+1)) {
+            System.out.println("The letters are not in order");
+        }
+    }
+>>>>>>> 13bdf99842e911e55a5deef94ddb8e2a6ad7c879
   }
   /**
    * TODO: Task 10: Implement sieve of Eratosthenes and print all prime numbers between 1 and 100
